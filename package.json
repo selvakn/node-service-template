@@ -1,0 +1,33 @@
+{
+  "name": "workflow_service",
+  "version": "0.0.0",
+  "description": "Publishing Workflow Service",
+  "main": "server.js",
+  "dependencies": {
+    "co": "~3.0.5",
+    "config": "~0.4.35",
+    "koa": "latest",
+    "koa-cors": "0.0.8",
+    "koa-json": "0.0.2",
+    "koa-router": "~3.1.2",
+    "generic-pool": "~2.0.4",
+    "thunkify": "~1.0.0",
+    "di": "0.0.1"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test node --harmony ./node_modules/gulp/bin/gulp.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "gulp": "~3.6.0",
+    "gulp-jshint": "~1.5.3",
+    "gulp-mocha": "~0.4.1",
+    "gulp-mocha-co": "^0.4.1-co.3",
+    "gulp-nodemon": "~1.0.2",
+    "gulp-util": "*",
+    "jshint-stylish": "~0.1.5"
+  },
+  "engine": "node >= 0.11.0"
+}
