@@ -1,13 +1,9 @@
 'use strict';
 
-var helpers = require('../helpers');
+var Resource = require('../../app/models/resource');
+var expect = require('chai').expect;
 
 describe('Resource', function(){
-  var expect = require('chai').expect,
-    Resource = helpers.injector.get('Resource');
-
-  helpers.withDatabase();
-
   it('should list the resources', function*(){
     var resources = yield Resource.all();
     expect(resources.length).to.least(0);

@@ -1,5 +1,12 @@
 'use strict';
 
-module.exports = function() {
-  return process.domain.conn;
+var config = require('config');
+
+module.exports = {
+  getSomething: function*() {
+    return yield [1, 2, 3];
+  },
+  getConfig: function*() {
+    return yield config;
+  }
 };

@@ -1,7 +1,7 @@
 {
-  "name": "workflow_service",
-  "version": "0.0.0",
-  "description": "Publishing Workflow Service",
+  "name": "node_service",
+  "version": "0.0.1",
+  "description": "Node Service",
   "main": "server.js",
   "dependencies": {
     "co": "~3.0.5",
@@ -10,9 +10,7 @@
     "koa-cors": "0.0.8",
     "koa-json": "0.0.2",
     "koa-router": "~3.1.2",
-    "generic-pool": "~2.0.4",
-    "thunkify": "~1.0.0",
-    "di": "0.0.1"
+    "thunkify": "~1.0.0"
   },
   "scripts": {
     "test": "NODE_ENV=test node --harmony ./node_modules/gulp/bin/gulp.js"

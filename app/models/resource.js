@@ -1,7 +1,9 @@
 'use strict';
 
-module.exports = function(db){
-  this.all = function*(){
-    return yield db().getSomething();
-  };
+var db = require('../utils/db');
+
+module.exports = {
+  all: function*() {
+    return yield db.getSomething();
+  }
 };

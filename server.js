@@ -1,27 +1,21 @@
 'use strict';
 
 var koa = require('koa'),
-router = require('koa-router'),
-cors = require('koa-cors'),
-json = require('koa-json'),
-app = koa(),
+  router = require('koa-router'),
+  cors = require('koa-cors'),
+  json = require('koa-json'),
+  app = koa(),
 
-injector = require('./config/injector.js'),
+  routes = new router();
 
-routes = new router();
-
-injector.invoke(function(domainMiddleware, loggerMiddleware, databaseMiddleware) {
-  app.use(domainMiddleware());
-  app.use(loggerMiddleware());
-  app.use(json());
-  app.use(cors());
-  app.use(databaseMiddleware());
-});
-
-injector.invoke(function(Resources) {
-  routes.get('/resources', Resources.list);
-});
+routes.get('/resources', require('./app/controllers/resources').list);
+routes.get('/config', require('./app/controllers/config').show);
 
 
+app.use(require('./app/middlewares/domain')());
+app.use(require('./app/middlewares/request_logger')());
+app.use(json());
+app.use(cors());
 app.use(routes.middleware());
+
 app.listen(9000);

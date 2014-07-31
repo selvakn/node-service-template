@@ -1,7 +1,9 @@
 'use strict';
 
-module.exports = function(Resource){
-  this.list = function*(){
+var Resource = require('../models/resource');
+
+module.exports = {
+  list: function*() {
     this.body = yield Resource.all();
-  };
+  }
 };
